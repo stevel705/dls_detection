@@ -8,14 +8,11 @@ from image_processing import ImageProcessing
 
 ip = ImageProcessing() 
 
-http = urllib3.PoolManager()
-
 UPLOAD_FOLDER = './src/uploads'
 ALLOWED_EXTENSIONS = {'pdf', 'png', 'jpg', 'jpeg', 'gif'}
 
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-
 
 
 def allowed_file(filename):

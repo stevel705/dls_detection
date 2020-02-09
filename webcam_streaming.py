@@ -16,7 +16,6 @@ def gen(camera):
     while True:
         frame = camera.get_frame()
         image_with_boxes = ip.object_detection(frame)
-        #print(type(image_with_boxes))
         retval, buffer = cv2.imencode('.jpg', image_with_boxes)
         frame = buffer.tobytes()
         #response = make_response(buffer.tobytes())
@@ -30,4 +29,4 @@ def video_feed():
                     mimetype='multipart/x-mixed-replace; boundary=frame')
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(debug=True)
